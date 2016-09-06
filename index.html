@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3D Stamford">
+    <meta name="author" content="Tedd Christian Robinson">
+    <title>3D Stamford</title>
+    <meta http-equiv='X-UA-Compatible' content='chrome=1' />
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+
+    <!-- JS LIBS -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.x3dom.org/download/x3dom.js"></script>
+
+    <!-- JS FOR MAKING DIVS APPEAR-->
+    <script>
+        $(document).ready(function(){
+            
+            $('a').click(function () {
+            var divname= this.name;
+            $("#"+divname).fadeIn().siblings().hide();
+            });
+        
+        });
+    </script> 
+    <!-- JS FOR MAKING BUTTON SOUND -->
+
+    <!-- CSS LIBS -->
+    <link rel="stylesheet" type="text/css" href="css/x3dom.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+<div id="container">
+    <header>
+
+        <!-- LOGO -->
+        <div id="logo">
+            <img src="img/stamfordseal.png" style="width: 120px; height: 110px;">
+            <h2 style="color: blue; float: right; padding-top: 20px;">IN 3D!</h2>
+        </div>
+
+        <!-- NAVIGATION BAR -->
+        <div id="menu" class="fixed-nav-bar">
+            <ul>
+                <li>
+                    <a href="#" name="panelContact" onclick="document.getElementById('ContactVP').setAttribute('set_bind','true');">Slide 5</a>
+                </li>      
+                <li>
+                    <a href="#" name="panelContact" onclick="document.getElementById('ContactVP').setAttribute('set_bind','true');">Slide 4</a>
+                </li>
+                <li>
+                    <a href="#" name="panelServices"  onclick="document.getElementById('ServicesVP').setAttribute('set_bind','true');">Slide 3</a>
+                </li>
+                <li>
+                    <a href="#" name="panelAbout" onclick="document.getElementById('AboutVP').setAttribute('set_bind','true');"
+                    >Slide 2</a>
+                </li>
+                <li>
+                    <a href="#" name="panelHome" onclick="document.getElementById('HomeVP').setAttribute('set_bind','true');">Slide 1</a>
+                </li>
+            </ul>
+            </div>
+
+
+
+    </header>
+
+    <!-- WEB3D SCENE -->
+    <div id="web3d">
+        <x3d id='aScene' showStat='false' showLog='false' style='width:100%; height:100%; border:none;'>
+            <Scene DEF='scene'>
+
+                <NavigationInfo type='walk' description='""' explorationMode=''fly'' headlight='true' isActive='false' metadata='X3DMetadataObject' speed='1.0' transitionTime='1.0' transitionType='["LINEAR"]' type='' typeParams='[-0.4,60,0.05,2.8]' visibilityLimit='0.0' ></NavigationInfo> 
+
+                <X3DBindableNode bind='false' description='""' isActive='false' metadata='X3DMetadataObject' ></X3DBindableNode>
+
+                <Background skyColor='0.83 0.82 0.97'></Background>
+                <DirectionalLight DEF="Sun" direction='0 -1 0' on ="true" intensity='2.0' shadowIntensity='0.2'></DirectionalLight>
+                    
+                <!-- SCENE VIEWPOINTS -->
+                <Viewpoint id="WelcomeVP" position="-1.94639 550 -50" orientation="-1 0 0 89.5"></Viewpoint>
+                <Viewpoint id="HomeVP" position="-1.94639 15 4" orientation="0 1 0 25"></Viewpoint>
+                <Viewpoint id="AboutVP" position="-1 3 8" orientation="0 1 0 0"></Viewpoint>
+                <Viewpoint id="ServicesVP" position="0 3 -15" orientation="0 1 0 0"></Viewpoint>
+                <Viewpoint id="ContactVP" position="4 3 -45" orientation="0 1 0 89.1"></Viewpoint>
+                <Viewpoint id="PipesVP" position="  25 4 15" orientation="0 1 0 89.5"></Viewpoint>
+
+                <!-- SCENE 3D OBJECTS -->
+                <Transform translation="-300 0 -550">
+                        <Shape>
+                            <Box DEF="GroundPlane" size='9000 .01 4250'></Box>
+                            <Appearance>
+                            <ImageTexture url='3d/Maps/ground.jpg'></ImageTexture>
+                            </Appearance>
+                        </Shape>
+                    </Transform>
+
+                <!-- SCENE INLINES -->
+                <Inline DEF="Stamford" url='3d/Stamford.x3d'></Inline>
+
+            </Scene>
+        </x3d>
+    </div>
+
+    <!-- 2D PANELS -->
+    <div id="sitePanels">
+<!-- 
+        <div id="splashScreen" class="panel" style="color: #000; background-image:none;">
+            <h1>Welcome</h1>
+            <p style="color: #000;">This site leverages the latest in 3D Web technology.<br/><br/>
+                <a href="#" name="panelHome" onclick="document.getElementById('HomeVP').setAttribute('set_bind','true');">CLICK TO ENTER</a>
+                <br/><br/>For a more traditional web experience <a href="site.html">click here</a>
+            </p>
+        </div> -->
+
+        <div id="panelHome" class="panel">
+            <h1>Slide 1</h1>
+            <img src="img/slide1.jpg"> 
+        </div>
+
+        <div id="panelAbout" class="panel">
+            <h1>Slide 2</h1>
+            <img src="img/slide2.jpg">
+        </div>
+
+        <div id="panelServices" class="panel">
+            <h1>Slide 3</h1>
+            <img src="img/slide3.jpg">
+        </div>
+
+        <div id="serviceEx" class="panel">
+            <h1>Slide 4</h1>
+            <img src="Slide4.jpg">
+        </div>
+
+        <div id="panelContact" class="panel">
+            <h1>Slide 5</h1>
+            <img src="img/slide5.jpg">
+        </div>
+    </div>
+
+</div>
+
+<!-- <footer>
+    <p>Copyright &copy; 2016 | <strong>IDEAbuilder</strong></p>
+</footer> -->
+
+</body>
+</html>

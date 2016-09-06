@@ -1,0 +1,162 @@
+/* TABLE OF CONTENT
+
+1 - RESET CSS
+2 - HEADER
+3 - NAVIGATION
+4 - CONTENT
+5 - FOOTER
+
+*/
+
+html, body {
+	color: #fff;
+    font-family: 'ARIAL',sans-serif;
+    font-size: 14px;
+	font-weight: 300;
+    height: 100%;
+    width: 100%;
+	background-color: #2B2626;
+}
+
+h1,h2, h3 h4, h5 h6, p {
+	margin:0;
+	padding: 0;
+}
+
+h1 {
+font-size: 90px
+}
+
+p {
+	margin:0 0 1em 0;
+	color: #fff;
+	font-size: 30px;
+	line-height: 1.5em;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	margin: 0 0 10px 0;
+}
+
+li {
+	color: #00b22d;
+}
+
+/* 2 - HEADER */
+#header {
+	height: 150px;
+	width: 100%;
+	background-color: #ccc;
+}
+
+
+/* 3 - NAVIGATION */
+.fixed-nav-bar > ul {
+  list-style-type: none;
+  padding: 0 150px 75px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.fixed-nav-bar li {
+  float: right;
+  padding-right: 10px;
+  width: 130px;
+  height: 30px;
+}
+
+.fixed-nav-bar a {
+  display: block;
+  margin: 20px 100px 0 0;
+  padding: 20px 0 20px 0;
+  width: 100px;
+  height: 20px;
+  background-image: url(../img/button.png);
+  background-size: 100% 100%;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.fixed-nav-bar li a:hover {
+  background-image: url(../img/buttonActive.png);
+  background-size: 100% 100%;
+  transition: 0.6s;
+  color: white;
+}
+
+
+/* 4- CONTENT */
+#container {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+#logo{
+	float: left;
+	position: absolute; 
+	z-index: 2;
+	padding: 15px 0 0 25px;
+}
+
+.panel {
+	display: none;
+	margin: auto;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	font-size: 34px;
+	background-image: url(../img/panel.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding: 25px 35px;
+}
+
+#sitePanels {
+    position: fixed; 
+	margin:auto;
+	width: 100%;
+	height: 65%;
+	top: 150px;
+	text-align: center;
+	z-index: 1;
+}
+
+#splashScreen {
+	display: inline-block;
+	margin: auto;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	font-size: 34px;
+	color: #000;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding: 25px 35px;
+}
+
+#web3d {
+	margin: auto;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+    border: 3px solid black;
+}
+
+
+/* 5 - FOOTER */
+footer {
+	width: 100%;
+	height: 50px;
+	padding: 5px 50px;
+	color: #fff;
+}
+
+
